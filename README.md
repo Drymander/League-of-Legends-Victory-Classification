@@ -1,7 +1,4 @@
-
-  
-  
- # League of Legends - Victory Classification Based on First 10 Minutes
+# League of Legends - Victory Classification Based on First 10 Minutes
 
 **Author**: [Johnny Dryman](mailto:johnnydryman@gmail.com)
 
@@ -202,8 +199,8 @@ We would also ask the League of Legends staff where the true issues are with the
 ## For More Information
 
 See the full analysis in the [Jupyter Notebook](./Johnny Dryman - Phase 3 Project Notebook.ipynb) or review this [presentation](./Johnny Dryman - Phase 3 Project Presentation.pdf).
-
-For additional info, contact Johnny Dryman at [johnnydryman@gmail.com](mailto:johnnydryman@gmail.com)
+Johnny Dryman - Phase 3 Project Notebook
+For additional info, contact Johnny Dryman at [johnnydryman@gmail.com]
 
 ## Repository Structure
 
