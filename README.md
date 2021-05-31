@@ -57,15 +57,15 @@ The win split between blue and red seems pretty even.  Of the 9,879 games, blue 
 
 Taking a look at blue vs red kills in determining a victory, it's evident with every increase in the kill spread, blue has a higher probability of winning the match.
 
-![kill_spread](./images/kill_spread.PNG)
+![kill_spread](./images/kill_spread.png)
 
 Killing the dragon in the first 10 minutes seems to have a positive influence on winning. While it might be telling of a win, there are plenty of instances where blue kills the dragon, but red kills the game.  In instances where blue defeats the dragon, their win rate is roughly 64%.  When no team defeats the dragon, our dataset shows that each team's win rate is roughly 50%.
 
-![dragon](./images/dragon.PNG)
+![dragon](./images/dragon.png)
 
 In terms of multicollinearity, there is high correlation between blueKills and blueTotalGold as well as blueAvgLvl and blueTotalExperience.
 
-![multicollinearity](./images/multicollinearity.PNG)
+![multicollinearity](./images/multicollinearity.png)
 
 ## Machine Learning Models
 
@@ -89,19 +89,19 @@ Logistic regression with grid search CV was the best performing model with a tes
     macro avg      0.72      0.72      0.72      2964
     weighted avg   0.72      0.72      0.72      2964
 
-![logistic](./images/logistic.PNG)
+![logistic](./images/logistic.png)
 
 #### Feature Importance with Coefficients
 
 By plotting the coefficients, we can get a view of what our logistic regression model deems most important to predicting victory.
 
-![coeff_all](./images/coeff_all.PNG)
+![coeff_all](./images/coeff_all.png)
 
 Total gold is by far the most important feature, while eliminating the dragon and total experience are secondarily important.  Surprisingly, blue kills has almost no importance in this model, which is counterintuitive to what seasoned League of Legends players might expect.
 
 Taking it one step further, we can rerun the model and remove total gold, total experience, and average level.  Not only were these features deemed highly correlated by our multicollinearity analysis, they also represent rewards for performing in-game actions and are heavily tied to with a number of other features.  Removing them and running a new logistic regression would highlight what actions are most important in the game.
 
-![coeff_action](./images/coeff_action.PNG)
+![coeff_action](./images/coeff_action.png)
 
 This paints a much clearer picture of what actions are most predictive of a win.  Importantly, rerunning the logistic regression with these features produced an accuracy of 70.68%, or only 1.42% less predictive than our best performing model.
 
@@ -127,7 +127,7 @@ Our random forest with grid search did not outperform our logistic regression.
     macro avg      0.71      0.71      0.71      2964
     weighted avg   0.71      0.71      0.71      2964
 
-![randomforest](./images/randomforest.PNG)
+![randomforest](./images/randomforest.png)
 
 #### Random Forest Feature Importance
 
@@ -136,7 +136,7 @@ Random forests will also let us view feature importances, but these do not repre
 Where logistic regression had some counterintuitive choices for feature importance, random forest is much more in line with our expectations.  Total gold, total experience, and average level, which collectively represent a more precise score for how each team is performing, are most highly valued.  In terms of actions, dragon is ranked higher than kills, but they are still similarly important.
 
 
-![rf_features](./images/rf_features.PNG)
+![rf_features](./images/rf_features.png)
 
 ### XGBoost with Grid Search CV
 
@@ -158,14 +158,14 @@ While XGBoost with grid search CV outperformed our random forest model by 0.25%,
     macro avg      0.72      0.72      0.72      2964
     weighted avg   0.72      0.72      0.72      2964
 
-![xgboost](./images/xgboost.PNG)
+![xgboost](./images/xgboost.png)
 
 
 #### XGBoost Feature Importance
 
 XGBoost's feature importances are very similar to those from our random forest model, which again falls in line with what we might normally expect based on our knowledge of League of Legends.
 
-![xgb_features](./images/xgb_features.PNG)
+![xgb_features](./images/xgb_features.png)
 
 # Interpretation
 
