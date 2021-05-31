@@ -53,7 +53,7 @@ Let's take a brief look at our data before running any models.
 
 The win split between blue and red seems pretty even.  Of the 9,879 games, blue won 4,930 and red won 4,949
 
-![win_counts](./images/win_counts.png)
+![win_counts](./images/win_counts_1.png)
 
 Taking a look at blue vs red kills in determining a victory, it's evident with every increase in the kill spread, blue has a higher probability of winning the match.
 
@@ -95,13 +95,13 @@ Logistic regression with grid search CV was the best performing model with a tes
 
 By plotting the coefficients, we can get a view of what our logistic regression model deems most important to predicting victory.
 
-![coeff_all](./images/coeff_all.png)
+![coeff_all](./images/coeff_all_1.png)
 
 Total gold is by far the most important feature, while eliminating the dragon and total experience are secondarily important.  Surprisingly, blue kills has almost no importance in this model, which is counterintuitive to what seasoned League of Legends players might expect.
 
 Taking it one step further, we can rerun the model and remove total gold, total experience, and average level.  Not only were these features deemed highly correlated by our multicollinearity analysis, they also represent rewards for performing in-game actions and are heavily tied to with a number of other features.  Removing them and running a new logistic regression would highlight what actions are most important in the game.
 
-![coeff_action](./images/coeff_action.png)
+![coeff_action](./images/coeff_action_1.png)
 
 This paints a much clearer picture of what actions are most predictive of a win.  Importantly, rerunning the logistic regression with these features produced an accuracy of 70.68%, or only 1.42% less predictive than our best performing model.
 
