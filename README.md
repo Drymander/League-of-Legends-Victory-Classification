@@ -52,6 +52,8 @@ The win split between blue and red seems pretty even.  Of the 9,879 games, blue 
 
 ![win_counts](images/win_counts_1.png)
 
+<img src="images/win_counts_1.png">
+
 Taking a look at blue vs red kills in determining a victory, it's evident with every increase in the kill spread, blue has a higher probability of winning the match.
 
 ![kill_spread](images/kill_spread.png)
